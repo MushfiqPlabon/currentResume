@@ -1,10 +1,14 @@
 # Mushfiqur Rahman Plaban - Resume
 
-This repository contains my resume, showcasing my academic background, professional experience, technical skills, and projects. Designed to be concise and ATS-friendly, this resume highlights an interdisciplinary approach to career development, blending business acumen with foundational web development skills. 
+This repository contains my resume, showcasing my academic background, professional experience, technical skills, and projects. Designed to be concise and ATS-friendly, this resume highlights an interdisciplinary approach to career development, blending business acumen with foundational web development skills.
 
 ## Live Preview
 
-To view the resume, simply open either `styledCV.html` or `unstyledCV.html` in your web browser.
+You can view the resume directly in your web browser:
+
+*   **Interactive Landing Page:** Open `index.html` to choose between the styled and unstyled versions.
+*   **Styled Version:** Open `styledCV.html` for a visually appealing, modern resume.
+*   **Unstyled Version:** Open `unstyledCV.html` for a clean, ATS-friendly resume with semantic HTML.
 
 ## Features
 
@@ -31,8 +35,15 @@ This resume is built using standard web technologies and highlights proficiency 
 ## Projects Highlight
 
 *   **RoutePy (Python):** A bus fleet management system developed for Stanford Code in Place final project, showcasing both procedural and object-oriented design patterns.
+    [github.com/MushfiqPlabon/RoutePy](https://github.com/MushfiqPlabon/RoutePy)
 *   **libMan (Django):** A RESTful API for a Library Management System built with Django and Django REST Framework.
+    [github.com/MushfiqPlabon/libMan](https://github.com/MushfiqPlabon/libMan)
 *   **EventMan (Django + Tailwind CSS):** A fully functional Event Management System demonstrating Django's ORM, optimized query techniques, and responsive front-end design.
+    [github.com/MushfiqPlabon/EventMan](https://github.com/MushfiqPlabon/EventMan)
+*   **dashB-tail-phi (HTML + Tailwind CSS):** A custom dashboard UI, showcasing proficiency in responsive utility-first CSS.
+    [github.com/MushfiqPlabon/dashB-tail-phi](https://github.com/MushfiqPlabon/dashB-tail-phi)
+*   **busManPy (Python):** Explored and compared procedural vs. object-oriented programming approaches for transport booking systems, focusing on design patterns and data handling.
+    [github.com/MushfiqPlabon/busManPy](https://github.com/MushfiqPlabon/busManPy)
 
 ## How to Use/View Locally
 
@@ -44,8 +55,8 @@ This resume is built using standard web technologies and highlights proficiency 
     ```bash
     cd currentResume
     ```
-3.  **Open `styledCV.html` or `unstyledCV.html`:**
-    Simply open either `styledCV.html` or `unstyledCV.html` in your preferred web browser.
+3.  **Open `index.html`:**
+    Simply open `index.html` in your preferred web browser to navigate to the styled or unstyled versions.
 
 ## Let's Connect & Collaborate
 
@@ -57,4 +68,3 @@ I am actively seeking opportunities that allow for continuous growth and interdi
 ## License
 
 This project is open-sourced under the [MIT License](LICENSE).
-
