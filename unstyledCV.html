@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descriptive title is good for both humans and search engines -->
+    <title>Mushfiqur Rahman Plaban | Academic & Professional CV</title>
+    <!-- Add a meta description for SEO -->
+    <meta name="description"
+        content="CV for Mushfiqur Rahman Plaban, a BBA (Marketing) candidate with skills in Python, Django, JavaScript, and business management.">
+    <!-- Use a simple, readable font for a clean look -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <!-- Tailwind CSS for styling the web version -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* General body styles for both web and print */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+        }
+
+        /* --- Web-specific Styles (visible on screen) --- */
+        .cv-container {
+            max-width: 80rem;
+            /* Use a larger max-width for a cleaner web view */
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #f3f4f6;
+        }
+
+        @media (max-width: 640px) {
+            .cv-container {
+                padding: 1rem;
+            }
+        }
+
+        .photo-placeholder {
+            width: 45mm;
+            height: 55mm;
+            border: 2px dashed #9ca3af;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.75rem;
+            /* 12px */
+            padding: 0.5rem;
+            flex-shrink: 0;
+            margin-left: 2rem;
+        }
+
+        /* --- Print-specific Styles (for a clean, printable PDF) --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+
+            body {
+                background-color: #ffffff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                padding: 0;
+                margin: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                border: none;
+                width: auto;
+                height: auto;
+                margin: 0;
+                padding: 2.5rem;
+                overflow: visible;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #000000 !important;
+            }
+
+            p,
+            li,
+            a {
+                color: #374151 !important;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            section {
+                break-inside: avoid;
+            }
+
+            .page-break-before {
+                page-break-before: always;
+                margin-top: 30mm;
+            }
+
+            .photo-placeholder {
+                border: 2px solid #000;
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<!-- Use itemscope and itemtype to define the document as a resume for structured data parsers like ATS -->
+
+<body class="bg-gray-100 p-4 sm:p-8" itemscope itemtype="http://schema.org/Person">
+
+    <!-- Main container for the CV content. -->
+    <div class="cv-container">
+
+        <!-- Header Section: Your name, contact information, and profile picture -->
+        <header class="flex flex-col sm:flex-row items-center justify-between text-center sm:text-left mb-6">
+            <div class="mb-2 sm:mb-0">
+                <!-- Use itemprop for the name for machine readability -->
+                <h1 class="text-3xl font-bold text-gray-800 mb-1" itemprop="name">Mushfiqur Rahman Plaban</h1>
+                <!-- itemprop for contact information -->
+                <p class="text-xs text-gray-600 mb-2" itemprop="address" itemscope
+                    itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">43, Lalit Mohan Das Lane, Lalbagh Road</span>,
+                    <span itemprop="addressLocality">Pilkhana</span>, <span itemprop="addressRegion">Dhaka-1211</span>,
+                    <span itemprop="addressCountry">Bangladesh</span>
+                </p>
+                <div
+                    class="flex flex-wrap justify-center sm:justify-start items-center text-xs text-blue-600 space-x-2">
+                    <a href="mailto:rahman.mushfiq2000@gmail.com" class="hover:underline"
+                        itemprop="email">rahman.mushfiq2000@gmail.com</a>
+                    <span>|</span>
+                    <p itemprop="telephone">+880-1641-879353</p>
+                    <span>|</span>
+                    <a href="https://github.com/MushfiqPlabon" target="_blank" class="hover:underline"
+                        rel="noopener noreferrer">github.com/MushfiqPlabon</a>
+                    <span>|</span>
+                    <a href="https://linkedin.com/in/mushfiq-plaban" target="_blank" class="hover:underline"
+                        rel="noopener noreferrer">linkedin.com/in/mushfiq-plaban</a>
+                </div>
+            </div>
+            <!-- Profile Picture Placeholder -->
+            <div class="photo-placeholder">
+                <p>Passport Size Photo<br>(45x55 mm)</p>
+            </div>
+        </header>
+
+        <!-- Main content divider for visual separation -->
+        <hr class="border-gray-200 mb-6">
+
+        <!-- Summary Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Summary</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">
+                A curious and resilient BBA (Marketing) candidate with a passion for lifelong learning and
+                interdisciplinary application of skills. I have foundational knowledge in Python, Django, and
+                JavaScript, paired with firsthand experience in business management and proficiency in using AI tools
+                for rapid development. My career and academic goal is to find opportunities—whether through a job, a
+                master's program, or a second bachelor's degree—that allow me to expand my knowledge beyond a single
+                discipline and contribute to new and challenging environments.
+            </p>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Education</h2>
+            <div class="mb-2" itemprop="education" itemscope
+                itemtype="http://schema.org/EducationalOccupationalCredential">
+                <h3 class="text-base font-medium text-gray-800" itemprop="name">Bachelor of Business Administration
+                    (BBA), Marketing</h3>
+                <p class="text-xs text-gray-500" itemprop="provider">National University, Bangladesh – Mohammadpur
+                    Central University College, Dhaka | <span itemprop="startDate">June 2019</span> – <span
+                        itemprop="endDate">Expected September 2025</span></p>
+                <ul class="list-disc list-inside mt-1 text-gray-700 space-y-0.5 text-sm">
+                    <li><span class="font-semibold">GPA:</span> 2.63 overall</li>
+                    <li><span class="font-semibold">Key Subjects:</span> Principles of Marketing, Organizational
+                        Behavior, Advertising & Promotion, Macro/Microeconomics, Consumer Behavior</li>
+                </ul>
+            </div>
+            <div itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                <h3 class="text-base font-medium text-gray-800" itemprop="name">Code in Place 2025 (Online)</h3>
+                <p class="text-xs text-gray-500" itemprop="provider">Stanford University | <span
+                        itemprop="startDate">April 2025</span> – <span itemprop="endDate">June 2025</span></p>
+                <ul class="list-disc list-inside mt-1 text-gray-700 space-y-0.5 text-sm">
+                    <li>Completed all course requirements, including a final project: RoutePy, a Python-based bus fleet
+                        management system.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Technical Skills</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-1 text-gray-700 text-sm">
+                <li><span class="font-semibold">Programming & Frameworks:</span> Python, Django/DRF, JavaScript, HTML5,
+                    CSS3, Tailwind CSS, Bootstrap</li>
+                <li><span class="font-semibold">Tools:</span> GitHub, Microsoft Office Suite (Excel, Word, PowerPoint),
+                    AI-Assisted Development & Prompt Engineering</li>
+                <li><span class="font-semibold">Other:</span> Responsive Design, Front-end Development, REST API
+                    Development</li>
+            </ul>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section class="mb-6 page-break-before" id="professional-experience">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Professional Experience</h2>
+            <div class="mb-2" itemprop="workExperience" itemscope itemtype="http://schema.org/Organization">
+                <div class="flex justify-between items-start">
+                    <h3 class="text-base font-medium text-gray-800" itemprop="jobTitle">Business Manager</h3>
+                    <span class="text-xs text-gray-500"><time itemprop="startDate" datetime="2021-02">February
+                            2021</time> – <time itemprop="endDate" datetime="2021-12">December 2021</time></span>
+                </div>
+                <p class="text-xs text-gray-500 mb-1" itemprop="name">Shovon Electronics, <span
+                        itemprop="addressLocality">Dhaka, Bangladesh</span> (Part-time)</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-0.5 text-sm" itemprop="description">
+                    <li>Took over management of a family-owned electronics solutions company and oversaw daily
+                        operations, finances, and client relations.</li>
+                    <li>Made the strategic decision to close the business to focus on academic pursuits and personal
+                        development after navigating a difficult leadership transition.</li>
+                    <li>Resolved complex operational challenges in a politically and economically volatile market,
+                        leveraging AI tools to streamline administrative tasks and problem-solve effectively.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Selected Projects Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Selected Projects</h2>
+            <div class="space-y-2">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">RoutePy (Python)</h3>
+                        <a href="https://github.com/MushfiqPlabon/RoutePy" target="_blank"
+                            class="text-blue-600 hover:underline text-sm"
+                            rel="noopener noreferrer">github.com/MushfiqPlabon/RoutePy</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>Developed a simple bus fleet management system as the final project for the Stanford Code in
+                            Place program.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">EventMan (Django + Tailwind CSS)</h3>
+                        <a href="https://github.com/MushfiqPlabon/EventMan" target="_blank"
+                            class="text-blue-600 hover:underline text-sm"
+                            rel="noopener noreferrer">github.com/MushfiqPlabon/EventMan</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>Created a dynamic event management system with optimized ORM queries and a responsive,
+                            modern front-end design.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">libMan (Django REST Framework)</h3>
+                        <a href="https://github.com/MushfiqPlabon/libMan" target="_blank"
+                            class="text-blue-600 hover:underline text-sm"
+                            rel="noopener noreferrer">github.com/MushfiqPlabon/libMan</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>Built a RESTful API for a library management system, demonstrating backend architectural
+                            skills.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">dashB-tail-phi (HTML + Tailwind CSS)</h3>
+                        <a href="https://github.com/MushfiqPlabon/dashB-tail-phi" target="_blank"
+                            class="text-blue-600 hover:underline text-sm"
+                            rel="noopener noreferrer">github.com/MushfiqPlabon/dashB-tail-phi</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>Designed a custom dashboard UI, showcasing proficiency in responsive utility-first CSS.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">busManPy (Python)</h3>
+                        <a href="https://github.com/MushfiqPlabon/busManPy" target="_blank"
+                            class="text-blue-600 hover:underline text-sm"
+                            rel="noopener noreferrer">github.com/MushfiqPlabon/busManPy</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>Explored and compared procedural vs. object-oriented programming approaches for transport
+                            booking systems, focusing on design patterns and data handling.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Certifications Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Additional Certifications</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-0.5 text-sm">
+                <li><span class="font-semibold">freeCodeCamp:</span> Responsive Web Design, HTML, CSS, Tailwind CSS</li>
+                <li><span class="font-semibold">Sololearn:</span> JavaScript, React + Redux, Web Development
+                    Fundamentals, Coding for Marketers</li>
+                <li><span class="font-semibold">Coursera:</span> Introduction to Microsoft Excel</li>
+                <li><span class="font-semibold">HackerRank:</span> CSS (Basic)</li>
+            </ul>
+        </section>
+
+        <!-- Languages & Interests Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Languages -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-700 mb-2">Languages</h2>
+                <ul class="list-disc list-inside text-gray-700 space-y-0.5 text-sm">
+                    <li><span class="font-semibold">Bengali:</span> Native/Bilingual</li>
+                    <li><span class="font-semibold">English:</span> Professional Working</li>
+                    <li><span class="font-semibold">Hindi:</span> Elementary</li>
+                    <li><span class="font-semibold">Urdu:</span> Elementary</li>
+                </ul>
+            </section>
+
+            <!-- Interests -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-700 mb-2">Interests</h2>
+                <p class="text-sm text-gray-700">A lifelong and avid learner with interests spanning multiple
+                    disciplines, including history, astronomy, geology, and socio-political studies. Enthusiastic about
+                    self-improvement, technology, and building future-proof career skills.</p>
+            </section>
+        </div>
+
+    </div>
+</body>
+
+</html>

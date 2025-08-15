@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushfiqur Rahman Plaban - Resume</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Futura:wght@400;500;700&family=HarmonyOS+Sans+SC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3949ab;
+            --primary-light: #6f74dd;
+            --primary-dark: #00227b;
+            --secondary-color: #00897b;
+            --text-on-primary: #ffffff;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --background: #f5f7fa;
+            --card-bg: #ffffff;
+            --accent: #ff7043;
+            --accent-light: rgba(255, 112, 67, 0.1);
+            --max-content-width: 170mm;
+            /* 210mm - 20mm padding on each side */
+            --content-padding: 0 15mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'HarmonyOS Sans SC', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .resume-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15mm;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resume-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5mm;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6mm;
+        }
+
+        .header-content {
+            flex: 1;
+            padding-left: 5mm;
+            border-left: 2mm solid var(--primary-color);
+        }
+
+        .photo-placeholder {
+            width: 45mm;
+            height: 55mm;
+            background-color: rgba(57, 73, 171, 0.1);
+            border: 1mm dashed var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10mm;
+            border-radius: 2mm;
+        }
+
+        .photo-placeholder i {
+            font-size: 16mm;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        .photo-placeholder-text {
+            font-size: 8pt;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 0 2mm;
+        }
+
+        .name {
+            font-family: 'Futura', sans-serif;
+            font-size: 28pt;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 2mm;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4mm;
+            font-size: 9pt;
+            color: var(--text-secondary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item i {
+            font-size: 10pt;
+            margin-right: 2mm;
+            color: var(--primary-color);
+        }
+
+        .section {
+            margin-bottom: 5mm;
+            width: 100%;
+            max-width: var(--max-content-width);
+            box-sizing: border-box;
+        }
+
+        .section-content {
+            padding: var(--content-padding);
+        }
+
+        .section-title {
+            font-family: 'Futura', sans-serif;
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+            padding-bottom: 1mm;
+            border-bottom: 1mm solid var(--primary-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 3mm;
+            font-size: 12pt;
+        }
+
+        .summary {
+            font-size: 10pt;
+            line-height: 1.4;
+            margin-bottom: 3mm;
+        }
+
+        .education-item,
+        .experience-item,
+        .project-item {
+            margin-bottom: 4mm;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1mm;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 11pt;
+            color: var(--primary-dark);
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 9pt;
+        }
+
+        .item-date {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 9pt;
+        }
+
+        .item-details {
+            font-size: 9pt;
+            color: var(--text-primary);
+            padding-left: 4mm;
+        }
+
+        .item-details ul {
+            list-style-type: none;
+        }
+
+        .item-details li {
+            position: relative;
+            padding-left: 4mm;
+            margin-bottom: 1mm;
+        }
+
+        .item-details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3mm;
+        }
+
+        .skill-category {
+            margin-bottom: 2mm;
+        }
+
+        .skill-category-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1mm;
+            font-size: 10pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category-title i {
+            margin-right: 2mm;
+            font-size: 9pt;
+            color: var(--primary-color);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2mm;
+        }
+
+        .skill-tag {
+            background-color: rgba(57, 73, 171, 0.1);
+            color: var(--primary-dark);
+            padding: 1mm 2mm;
+            border-radius: 10mm;
+            font-size: 8pt;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 8pt;
+            display: block;
+            margin-top: 1mm;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2mm;
+        }
+
+        .cert-item {
+            background-color: rgba(0, 137, 123, 0.1);
+            padding: 1mm 3mm;
+            border-radius: 2mm;
+            font-size: 8pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .cert-item i {
+            margin-right: 2mm;
+            font-size: 8pt;
+            color: var(--secondary-color);
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1mm;
+            font-size: 9pt;
+            padding-left: 4mm;
+            width: 100%;
+            max-width: var(--max-content-width);
+            box-sizing: border-box;
+        }
+
+        .language-item i {
+            margin-right: 2mm;
+            color: var(--primary-color);
+        }
+
+        .language-proficiency {
+            color: var(--text-secondary);
+        }
+
+        .interests {
+            font-size: 9pt;
+            line-height: 1.4;
+            padding: 0 4mm;
+            width: 100%;
+            max-width: var(--max-content-width);
+            box-sizing: border-box;
+            margin-left: 0;
+        }
+
+        .highlight {
+            background-color: var(--accent-light);
+            padding: 1mm 2mm;
+            border-radius: 1mm;
+            font-weight: 500;
+        }
+
+        .note {
+            font-size: 8pt;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 1mm;
+        }
+
+        .goals-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+            margin-top: 3mm;
+        }
+
+        .goal-box {
+            background-color: rgba(57, 73, 171, 0.05);
+            border-left: 2mm solid var(--primary-color);
+            padding: 2mm;
+            border-radius: 1mm;
+        }
+
+        .goal-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1mm;
+            font-size: 10pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .goal-title i {
+            margin-right: 2mm;
+            color: var(--primary-color);
+            font-size: 9pt;
+        }
+
+        .goal-content {
+            font-size: 8pt;
+            line-height: 1.4;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            font-size: 7pt;
+            padding: 1mm 2mm;
+            border-radius: 10mm;
+            margin-left: 2mm;
+            font-weight: 500;
+        }
+
+        .learning-indicator {
+            position: relative;
+            display: inline-block;
+        }
+
+        .learning-indicator::after {
+            content: "📚";
+            position: absolute;
+            top: -2mm;
+            right: -3mm;
+            font-size: 7pt;
+        }
+
+        .emphasis {
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                padding: 15mm;
+            }
+
+            #technical-skills-section {
+                page-break-inside: avoid;
+                page-break-before: auto;
+                margin-top: 30mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-container">
+        <!-- Header/Contact Information -->
+        <div class="header">
+            <div class="header-content">
+                <h1 class="name">Mushfiqur Rahman Plaban</h1>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        43, Lalit Mohan Das Lane, Lalbagh Road, Pilkhana, Dhaka-1211, Bangladesh
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        rahman.mushfiq2000@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        +880-____-______
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        github.com/MushfiqPlabon
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        linkedin.com/in/mushfiq-plaban
+                    </div>
+                </div>
+            </div>
+            <div class="photo-placeholder">
+                <i class="fas fa-user"></i>
+                <div class="photo-placeholder-text">
+                    Passport Size Photo (Coming soon)<br>
+                    45×55 mm
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-user"></i>
+                Professional Summary
+            </h2>
+            <div class="section-content">
+                <p class="summary">
+                    BBA (Marketing) candidate with business management experience and foundational web development
+                    skills. Proficient in <span class="highlight">basic Python and JavaScript</span>, learning Django
+                    and React.js. Skilled in HTML5, CSS3, responsive design, and AI-assisted development. Adaptable
+                    problem-solver seeking interdisciplinary opportunities.
+                </p>
+
+                <div class="goals-container">
+                    <div class="goal-box">
+                        <div class="goal-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Academic Goals
+                        </div>
+                        <div class="goal-content">
+                            Completing BBA in Marketing (final year). Seeking master's program or <span
+                                class="emphasis">second bachelor's in a different discipline</span> to future-proof
+                            career against AI disruption and broaden knowledge base through interdisciplinary learning.
+                        </div>
+                    </div>
+
+                    <div class="goal-box">
+                        <div class="goal-title">
+                            <i class="fas fa-briefcase"></i>
+                            Career Goals
+                        </div>
+                        <div class="goal-content">
+                            Building a career bridging <span class="emphasis">multiple disciplines</span>, creating
+                            value at the intersection of diverse fields. Seeking opportunities with continuous growth,
+                            diverse perspectives, and freedom to explore beyond conventional limits.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Education
+            </h2>
+            <div class="section-content">
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">BBA, Marketing <span class="status-badge">Final Year</span></div>
+                            <div class="item-subtitle">National University, Bangladesh – Mohammadpur Central University
+                                College</div>
+                        </div>
+                        <div class="item-date">Jun 2019 – Sep 2025</div>
+                    </div>
+                    <div class="item-details">
+                        <p><i class="fas fa-chart-line"></i> GPA: 2.63 overall</p>
+                        <p><i class="fas fa-book"></i> Key subjects: Marketing, Organizational Behavior, Advertising,
+                            Business Communication, Consumer Behavior</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Stanford's Code in Place 2025 (Online)</div>
+                        </div>
+                        <div class="item-date">Apr 2025 – Jun 2025</div>
+                    </div>
+                    <div class="item-details">
+                        <p><i class="fas fa-trophy"></i> Final project: RoutePy, a Python-based bus fleet management
+                            system</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i>
+                Professional Experience
+            </h2>
+            <div class="section-content">
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Business Manager</div>
+                            <div class="item-subtitle">Shovon Electronics, Dhaka, Bangladesh (Part-time)</div>
+                        </div>
+                        <div class="item-date">Feb 2021 – Dec 2021</div>
+                    </div>
+                    <div class="item-details">
+                        <ul>
+                            <li><i class="fas fa-exchange-alt"></i> Took over management after father's demise,
+                                ownership transferred to mother</li>
+                            <li><i class="fas fa-building"></i> Managed operations serving institutional clients (e.g.,
+                                Institute of Engineers, Bangladesh)</li>
+                            <li><i class="fas fa-tasks"></i> Oversaw finances, procurement, client relations, and legal
+                                inheritance processes</li>
+                            <li><i class="fas fa-chart-line"></i> Resolved challenges in volatile market while
+                                continuing studies and learning programming</li>
+                            <li><i class="fas fa-balance-scale"></i> Balanced business responsibilities with academic
+                                pursuits and self-taught development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section" id="technical-skills-section">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Technical Skills
+            </h2>
+            <div class="section-content">
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-category-title">
+                            <i class="fas fa-laptop-code"></i>
+                            Programming & Web Technologies
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag"><i class="fab fa-python"></i> Python (Basic)</span>
+                            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript (Basic)</span>
+                            <span class="skill-tag learning-indicator"><i class="fas fa-leaf"></i> Django
+                                (Learning)</span>
+                            <span class="skill-tag learning-indicator"><i class="fab fa-react"></i> React.js
+                                (Learning)</span>
+                            <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-tag"><i class="fas fa-wind"></i> Tailwind CSS</span>
+                            <span class="skill-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">
+                            <i class="fas fa-tools"></i>
+                            Tools
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="skill-tag"><i class="fas fa-file-excel"></i> Excel (Data Entry)</span>
+                            <span class="skill-tag"><i class="fas fa-file-word"></i> Word</span>
+                            <span class="skill-tag"><i class="fas fa-file-powerpoint"></i> PowerPoint</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title">
+                            <i class="fas fa-lightbulb"></i>
+                            Development Approach
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag"><i class="fas fa-robot"></i> AI-assisted development</span>
+                            <span class="skill-tag"><i class="fas fa-rocket"></i> Rapid prototyping</span>
+                            <span class="skill-tag"><i class="fas fa-sync-alt"></i> Continuous improvement</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="note"><i class="fas fa-info-circle"></i> Currently learning both Django and React.js
+                    frameworks</p>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-project-diagram"></i>
+                Projects
+            </h2>
+            <div class="section-content">
+                <div class="project-item">
+                    <div class="item-title"><i class="fas fa-bus"></i> RoutePy (Python)</div>
+                    <div class="item-subtitle">Bus fleet management system for Stanford Code in Place final project
+                    </div>
+                    <a href="https://github.com/MushfiqPlabon/RoutePy"
+                        class="project-link">github.com/MushfiqPlabon/RoutePy</a>
+                </div>
+                <div class="project-item">
+                    <div class="item-title"><i class="fas fa-book"></i> libMan (Django)</div>
+                    <div class="item-subtitle">Library management system with Django framework</div>
+                    <a href="https://github.com/MushfiqPlabon/libMan"
+                        class="project-link">github.com/MushfiqPlabon/libMan</a>
+                </div>
+                <div class="project-item">
+                    <div class="item-title"><i class="fas fa-calendar-alt"></i> EventMan (Django + Tailwind CSS)</div>
+                    <div class="item-subtitle">Event management system with responsive front-end</div>
+                    <a href="https://github.com/MushfiqPlabon/EventMan"
+                        class="project-link">github.com/MushfiqPlabon/EventMan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-certificate"></i>
+                Certifications
+            </h2>
+            <div class="section-content">
+                <div class="cert-list">
+                    <div class="cert-item"><i class="fas fa-university"></i> Stanford's Code In Place 2025</div>
+                    <div class="cert-item"><i class="fas fa-certificate"></i> freeCodeCamp: Responsive Web Design</div>
+                    <div class="cert-item"><i class="fas fa-code"></i> Sololearn: JavaScript</div>
+                    <div class="cert-item"><i class="fas fa-atom"></i> Sololearn: React + Redux</div>
+                    <div class="cert-item"><i class="fas fa-file-excel"></i> Coursera: Introduction to Excel</div>
+                    <div class="cert-item"><i class="fas fa-paint-brush"></i> HackerRank: CSS (Basic)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-language"></i>
+                Languages
+            </h2>
+            <div class="section-content">
+                <div class="language-item">
+                    <div><i class="fas fa-comments"></i> Bengali</div>
+                    <div class="language-proficiency">Native/Bilingual</div>
+                </div>
+                <div class="language-item">
+                    <div><i class="fas fa-comments"></i> English</div>
+                    <div class="language-proficiency">Professional Working</div>
+                </div>
+                <div class="language-item">
+                    <div><i class="fas fa-comments"></i> Hindi</div>
+                    <div class="language-proficiency">Elementary</div>
+                </div>
+                <div class="language-item">
+                    <div><i class="fas fa-comments"></i> Urdu</div>
+                    <div class="language-proficiency">Elementary</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-heart"></i>
+                Interests
+            </h2>
+            <div class="section-content">
+                <p class="interests">
+                    <i class="fas fa-globe"></i> Lifelong learning across all disciplines including but not limited to
+                    history, astronomy,
+                    geology, and socio-political studies.
+                    </br>
+                    <i class="fas fa-rocket"></i> Passionate about
+                    self-improvement, technology, and building future-proof career skills.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
