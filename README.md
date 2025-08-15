@@ -1,6 +1,6 @@
-# Mushfiqur Rahman Plaban - Resume/Portfolio
+# Mushfiqur Rahman Plaban - Resume
 
-This repository contains the personal resume and portfolio of Mushfiqur Rahman Plaban, showcasing my academic background, professional experience, technical skills, and projects. Designed to be concise and ATS-friendly, this resume highlights an interdisciplinary approach to career development, blending business acumen with foundational web development skills. 
+This repository contains my resume, showcasing my academic background, professional experience, technical skills, and projects. Designed to be concise and ATS-friendly, this resume highlights an interdisciplinary approach to career development, blending business acumen with foundational web development skills. 
 
 ## Live Preview
 
