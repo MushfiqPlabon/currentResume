@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushfiqur Rahman Plaban - Europass CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #003399; /* Europass blue */
+            --secondary-color: #f0f0f0; /* Light grey for background/borders */
+            --text-color: #333333;
+            --header-bg: #e0e0e0;
+            --border-color: #cccccc;
+            --font-size-base: 10pt;
+            --line-height-base: 1.3;
+            --sidebar-width: 60mm;
+            --main-content-width: 120mm;
+            --padding-horizontal: 15mm;
+            --padding-vertical: 15mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            color: var(--text-color);
+            background-color: #ffffff; /* Ensure white background for print */
+            -webkit-print-color-adjust: exact; /* For printing colors */
+            print-color-adjust: exact;
+        }
+
+        .europass-container {
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            margin: 0 auto;
+            padding: var(--padding-vertical) var(--padding-horizontal);
+            display: flex;
+            background-color: #ffffff;
+        }
+
+        .europass-sidebar {
+            width: var(--sidebar-width);
+            padding-right: 5mm;
+            border-right: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .europass-main-content {
+            flex-grow: 1;
+            padding-left: 10mm;
+            width: var(--main-content-width); /* Explicit width for main content */
+        }
+
+        .photo-placeholder {
+            width: 40mm;
+            height: 50mm;
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3mm;
+        }
+
+        .photo-placeholder i {
+            font-size: 20mm;
+            color: var(--border-color);
+            margin-bottom: 2mm;
+        }
+
+        .photo-placeholder-text {
+            font-size: 7pt;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .sidebar-name {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2mm;
+        }
+
+        .sidebar-contact-info {
+            font-size: 9pt;
+            margin-bottom: 1mm;
+        }
+
+        .sidebar-contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .europass-section {
+            margin-bottom: 4mm;
+        }
+
+        .europass-section h2 {
+            font-size: 14pt;
+            font-weight: 500;
+            color: var(--primary-color);
+            background-color: var(--header-bg);
+            padding: 1.5mm 5mm;
+            margin-bottom: 3mm;
+            border-left: 5mm solid var(--primary-color);
+        }
+
+        .europass-section-content {
+            padding-left: 0mm; /* No extra padding here, handled by main-content */
+        }
+
+        .europass-item {
+            margin-bottom: 3mm;
+        }
+
+        .europass-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1mm;
+        }
+
+        .europass-item-title {
+            font-weight: 700;
+            font-size: 11pt;
+            color: var(--text-color);
+        }
+
+        .europass-item-subtitle {
+            font-style: italic;
+            font-size: 9pt;
+            color: var(--text-color);
+        }
+
+        .europass-item-date {
+            font-size: 9pt;
+            color: var(--text-color);
+            flex-shrink: 0;
+            margin-left: 5mm;
+        }
+
+        .europass-item-details {
+            font-size: 9pt;
+            color: var(--text-color);
+            padding-left: 5mm;
+        }
+
+        .europass-item-details ul {
+            list-style-type: disc;
+            padding-left: 5mm;
+        }
+
+        .europass-item-details li {
+            margin-bottom: 1mm;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns for skills */
+            gap: 5mm;
+        }
+
+        .skill-category h3 {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary-color);
+            margin-bottom: 2mm;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2mm;
+        }
+
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 1mm 3mm;
+            border-radius: 2mm;
+            font-size: 8pt;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 8pt;
+            display: block;
+            margin-top: 1mm;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3mm;
+        }
+
+        .cert-item {
+            background-color: var(--secondary-color);
+            padding: 2mm 4mm;
+            border-radius: 2mm;
+            font-size: 9pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2mm;
+            font-size: 9pt;
+        }
+
+        .language-proficiency {
+            font-style: italic;
+            color: var(--text-color);
+        }
+
+        .interests-text {
+            font-size: 9pt;
+        }
+
+        /* Print specific styles */
+                @media print {
+            .europass-container {
+                box-shadow: none;
+                width: 210mm; /* Full A4 width */
+                min-height: 297mm; /* Full A4 height */
+                margin: 0; /* No external margin */
+                padding: 15mm; /* Internal padding for margins */
+            }
+            .europass-section {
+                page-break-inside: avoid;
+            }
+            .europass-section h2 {
+                page-break-before: avoid;
+            }
+            .skills-grid .skill-category:nth-child(3) {
+                grid-column: 1 / -1; /* Make the third skill category span both columns */
+            }
+            .europass-main-content section:nth-of-type(5) h2 { /* Target Projects section h2 */
+                page-break-before: always;
+            }
+            .europass-main-content section:nth-of-type(5) { /* Target Projects section */
+                margin-top: 15mm; /* Explicit top margin for section on new page */
+            }
+        }
+    </style>
+</head>
+<body itemscope itemtype="http://schema.org/Person">
+    <div class="europass-container">
+        <aside class="europass-sidebar">
+            <div class="photo-placeholder">
+                <i class="fas fa-user"></i>
+                <div class="photo-placeholder-text">Photo</div>
+            </div>
+            <h1 class="sidebar-name" itemprop="name">Mushfiqur Rahman Plaban</h1>
+            <p class="sidebar-contact-info">
+                <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="addressLocality">Dhaka</span>, <span itemprop="addressCountry">Bangladesh</span>
+                </span>
+            </p>
+            <p class="sidebar-contact-info">
+                <a href="mailto:rahman.mushfiq2000@gmail.com" itemprop="email">rahman.mushfiq2000@gmail.com</a>
+            </p>
+            <p class="sidebar-contact-info">
+                <span itemprop="telephone">+880-____-______</span>
+            </p>
+            <p class="sidebar-contact-info">
+                <a href="https://github.com/MushfiqPlabon" itemprop="url">github.com/MushfiqPlabon</a>
+            </p>
+            <p class="sidebar-contact-info">
+                <a href="https://linkedin.com/in/mushfiq-plaban" itemprop="url">linkedin.com/in/mushfiq-plaban</a>
+            </p>
+        </aside>
+
+        <main class="europass-main-content">
+            <section class="europass-section">
+                <h2>About Me</h2>
+                <div class="europass-section-content">
+                    <p itemprop="description">BBA (Marketing) candidate with business management experience and foundational web development
+                    skills. Proficient in basic Python and JavaScript, learning Django and React.js. Skilled in HTML5, CSS3, responsive
+                    design, and AI-assisted development. Adaptable problem-solver seeking interdisciplinary opportunities.</p>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Education and Training</h2>
+                <div class="europass-section-content">
+                    <div class="europass-item" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="name">BBA, Marketing</div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2019-06">Jun 2019</span> – <span itemprop="endDate" content="2025-09">Sep 2025</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-subtitle" itemprop="provider">National University, Bangladesh – Mohammadpur Central University College</div>
+                        <div class="europass-item-details">
+                            <ul>
+                                <li>GPA: 2.63 overall</li>
+                                <li>Key subjects: Marketing, Organizational Behavior, Advertising, Business Communication, Consumer Behavior</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="europass-item" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="name">Stanford's Code in Place 2025 (Online)</div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2025-04">Apr 2025</span> – <span itemprop="endDate" content="2025-06">Jun 2025</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-subtitle" itemprop="provider">Stanford University</div>
+                        <div class="europass-item-details">
+                            <ul>
+                                <li>Final project: RoutePy, a Python-based bus fleet management system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Work Experience</h2>
+                <div class="europass-section-content">
+                    <div class="europass-item" itemprop="workExperience" itemscope itemtype="http://schema.org/Organization">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="jobTitle">Business Manager</div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2021-02">Feb 2021</span> – <span itemprop="endDate" content="2021-12">Dec 2021</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-subtitle" itemprop="name">Shovon Electronics, Dhaka, Bangladesh (Part-time)</div>
+                        <div class="europass-item-details" itemprop="description">
+                            <ul>
+                                <li>Took over management after father's demise, ownership transferred to mother</li>
+                                <li>Managed operations serving institutional clients (e.g., Institute of Engineers, Bangladesh)</li>
+                                <li>Oversaw finances, procurement, client relations, and legal inheritance processes</li>
+                                <li>Resolved challenges in volatile market while continuing studies and learning programming</li>
+                                <li>Balanced business responsibilities with academic pursuits and self-taught development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Skills</h2>
+                <div class="europass-section-content skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming & Web Technologies</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Python (Basic)</span>
+                            <span class="skill-tag">JavaScript (Basic)</span>
+                            <span class="skill-tag">Django (Learning)</span>
+                            <span class="skill-tag">React.js (Learning)</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Excel (Data Entry)</span>
+                            <span class="skill-tag">Word</span>
+                            <span class="skill-tag">PowerPoint</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development Approach</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">AI-assisted development</span>
+                            <span class="skill-tag">Rapid prototyping</span>
+                            <span class="skill-tag">Continuous improvement</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Projects</h2>
+                <div class="europass-section-content">
+                    <div class="europass-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                        <div class="europass-item-title" itemprop="name">RoutePy (Python)</div>
+                        <div class="europass-item-subtitle" itemprop="description">Bus fleet management system for Stanford Code in Place final project</div>
+                        <a href="https://github.com/MushfiqPlabon/RoutePy" class="project-link" itemprop="url">github.com/MushfiqPlabon/RoutePy</a>
+                    </div>
+                    <div class="europass-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                        <div class="europass-item-title" itemprop="name">libMan (Django)</div>
+                        <div class="europass-item-subtitle" itemprop="description">Library management system with Django framework</div>
+                        <a href="https://github.com/MushfiqPlabon/libMan" class="project-link" itemprop="url">github.com/MushfiqPlabon/libMan</a>
+                    </div>
+                    <div class="europass-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                        <div class="europass-item-title" itemprop="name">EventMan (Django + Tailwind CSS)</div>
+                        <div class="europass-item-subtitle" itemprop="description">Event management system with responsive front-end</div>
+                        <a href="https://github.com/MushfiqPlabon/EventMan" class="project-link" itemprop="url">github.com/MushfiqPlabon/EventMan</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Certifications</h2>
+                <div class="europass-section-content cert-list">
+                    <div class="cert-item">Stanford's Code In Place 2025</div>
+                    <div class="cert-item">freeCodeCamp: Responsive Web Design</div>
+                    <div class="cert-item">Sololearn: JavaScript</div>
+                    <div class="cert-item">Sololearn: React + Redux</div>
+                    <div class="cert-item">Coursera: Introduction to Excel</div>
+                    <div class="cert-item">HackerRank: CSS (Basic)</div>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Languages</h2>
+                <div class="europass-section-content">
+                    <div class="language-item">
+                        <div>Bengali</div>
+                        <div class="language-proficiency">Native/Bilingual</div>
+                    </div>
+                    <div class="language-item">
+                        <div>English</div>
+                        <div class="language-proficiency">Professional Working</div>
+                    </div>
+                    <div class="language-item">
+                        <div>Hindi</div>
+                        <div class="language-proficiency">Elementary</div>
+                    </div>
+                    <div class="language-item">
+                        <div>Urdu</div>
+                        <div class="language-proficiency">Elementary</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Interests</h2>
+                <div class="europass-section-content">
+                    <p class="interests-text">
+                        Lifelong learning across all disciplines including but not limited to history, astronomy,
+                        geology, and socio-political studies. Passionate about
+                        self-improvement, technology, and building future-proof career skills.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

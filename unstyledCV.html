@@ -72,47 +72,115 @@
                 print-color-adjust: exact;
                 padding: 0;
                 margin: 0;
+                font-size: 9pt;
+                line-height: 1.3;
             }
 
             .cv-container {
                 box-shadow: none;
                 border: none;
-                width: auto;
-                height: auto;
+                width: 180mm;
+                min-height: 267mm;
                 margin: 0;
-                padding: 2.5rem;
+                padding: 15mm;
                 overflow: visible;
             }
 
-            h1,
-            h2,
+            h1 {
+                color: #000000 !important;
+                font-size: 20pt;
+                line-height: 1.1;
+            }
+
+            h2 {
+                color: #000000 !important;
+                font-size: 14pt;
+                line-height: 1.2;
+            }
+
             h3 {
                 color: #000000 !important;
+                font-size: 11pt;
+                line-height: 1.3;
             }
 
             p,
-            li,
-            a {
+            li {
                 color: #374151 !important;
+                font-size: 9pt;
+                line-height: 1.3;
             }
 
             a {
+                color: #374151 !important;
                 text-decoration: none;
             }
 
             section {
-                break-inside: avoid;
-            }
-
-            .page-break-before {
-                page-break-before: always;
-                margin-top: 30mm;
+                page-break-inside: avoid;
             }
 
             .photo-placeholder {
                 border: 2px solid #000;
                 background-color: #fff;
                 color: #000;
+                width: 40mm !important;
+                height: 50mm !important;
+                font-size: 6pt !important;
+                padding: 0.2rem !important;
+                margin-left: 5mm !important;
+            }
+
+            .photo-placeholder p {
+                line-height: 1.1 !important;
+            }
+
+            .text-xs {
+                font-size: 7pt !important;
+            }
+
+            .text-sm {
+                font-size: 8pt !important;
+            }
+
+            .mb-6 {
+                margin-bottom: 4mm !important;
+            }
+
+            .mb-2 {
+                margin-bottom: 1mm !important;
+            }
+
+            .mb-1 {
+                margin-bottom: 0.5mm !important;
+            }
+
+            .mt-1 {
+                margin-top: 0.5mm !important;
+            }
+
+            .space-y-0\.5 > :not([hidden]) ~ :not([hidden]) {
+                --tw-space-y-reverse: 0;
+                margin-top: calc(0.5mm * calc(1 - var(--tw-space-y-reverse))) !important;
+                margin-bottom: calc(0.5mm * var(--tw-space-y-reverse)) !important;
+            }
+
+            .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+                --tw-space-y-reverse: 0;
+                margin-top: calc(1mm * calc(1 - var(--tw-space-y-reverse))) !important;
+                margin-bottom: calc(1mm * var(--tw-space-y-reverse)) !important;
+            }
+
+            .gap-1 {
+                gap: 1mm !important;
+            }
+
+            .gap-6 {
+                gap: 4mm !important;
+            }
+
+            .list-disc {
+                padding-left: 4mm !important;
             }
         }
     </style>
@@ -132,16 +200,14 @@
                 <!-- itemprop for contact information -->
                 <p class="text-xs text-gray-600 mb-2" itemprop="address" itemscope
                     itemtype="http://schema.org/PostalAddress">
-                    <span itemprop="streetAddress">43, Lalit Mohan Das Lane, Lalbagh Road</span>,
-                    <span itemprop="addressLocality">Pilkhana</span>, <span itemprop="addressRegion">Dhaka-1211</span>,
-                    <span itemprop="addressCountry">Bangladesh</span>
+                    <span itemprop="addressLocality">Dhaka</span>, <span itemprop="addressCountry">Bangladesh</span>
                 </p>
                 <div
                     class="flex flex-wrap justify-center sm:justify-start items-center text-xs text-blue-600 space-x-2">
                     <a href="mailto:rahman.mushfiq2000@gmail.com" class="hover:underline"
                         itemprop="email">rahman.mushfiq2000@gmail.com</a>
                     <span>|</span>
-                    <p itemprop="telephone">+880-XXX-XXXXXX</p>
+                    <p itemprop="telephone">+880-____-______</p>
                     <span>|</span>
                     <a href="https://github.com/MushfiqPlabon" target="_blank" class="hover:underline"
                         rel="noopener noreferrer">github.com/MushfiqPlabon</a>

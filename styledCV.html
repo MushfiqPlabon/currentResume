@@ -417,32 +417,32 @@
     </style>
 </head>
 
-<body>
+<body itemscope itemtype="http://schema.org/Person">
     <div class="resume-container">
         <!-- Header/Contact Information -->
         <div class="header">
             <div class="header-content">
-                <h1 class="name">Mushfiqur Rahman Plaban</h1>
+                <h1 class="name" itemprop="name">Mushfiqur Rahman Plaban</h1>
                 <div class="contact-info">
-                    <div class="contact-item">
+                    <div class="contact-item" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                         <i class="fas fa-map-marker-alt"></i>
-                        43, Lalit Mohan Das Lane, Lalbagh Road, Pilkhana, Dhaka-1211, Bangladesh
+                        <span itemprop="addressLocality">Dhaka</span>, <span itemprop="addressCountry">Bangladesh</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        rahman.mushfiq2000@gmail.com
+                        <a href="mailto:rahman.mushfiq2000@gmail.com" itemprop="email">rahman.mushfiq2000@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        +880-XXX-XXXXXX
+                        <span itemprop="telephone">+880-____-______</span>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-github"></i>
-                        github.com/MushfiqPlabon
+                        <a href="https://github.com/MushfiqPlabon" itemprop="url">github.com/MushfiqPlabon</a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        linkedin.com/in/mushfiq-plaban
+                        <a href="https://linkedin.com/in/mushfiq-plaban" itemprop="url">linkedin.com/in/mushfiq-plaban</a>
                     </div>
                 </div>
             </div>
@@ -462,7 +462,7 @@
                 Professional Summary
             </h2>
             <div class="section-content">
-                <p class="summary">
+                <p class="summary" itemprop="description">
                     BBA (Marketing) candidate with business management experience and foundational web development
                     skills. Proficient in <span class="highlight">basic Python and JavaScript</span>, learning Django
                     and React.js. Skilled in HTML5, CSS3, responsive design, and AI-assisted development. Adaptable
@@ -504,14 +504,16 @@
                 Education
             </h2>
             <div class="section-content">
-                <div class="education-item">
+                <div class="education-item" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
                     <div class="item-header">
                         <div>
-                            <div class="item-title">BBA, Marketing <span class="status-badge">Final Year</span></div>
-                            <div class="item-subtitle">National University, Bangladesh – Mohammadpur Central University
+                            <div class="item-title" itemprop="name">BBA, Marketing <span class="status-badge">Final Year</span></div>
+                            <div class="item-subtitle" itemprop="provider">National University, Bangladesh – Mohammadpur Central University
                                 College</div>
                         </div>
-                        <div class="item-date">Jun 2019 – Sep 2025</div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2019-06">Jun 2019</span> – <span itemprop="endDate" content="2025-09">Sep 2025</span>
+                        </div>
                     </div>
                     <div class="item-details">
                         <p><i class="fas fa-chart-line"></i> GPA: 2.63 overall</p>
@@ -519,12 +521,14 @@
                             Business Communication, Consumer Behavior</p>
                     </div>
                 </div>
-                <div class="education-item">
+                <div class="education-item" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
                     <div class="item-header">
                         <div>
-                            <div class="item-title">Stanford's Code in Place 2025 (Online)</div>
+                            <div class="item-title" itemprop="name">Stanford's Code in Place 2025 (Online)</div>
                         </div>
-                        <div class="item-date">Apr 2025 – Jun 2025</div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2025-04">Apr 2025</span> – <span itemprop="endDate" content="2025-06">Jun 2025</span>
+                        </div>
                     </div>
                     <div class="item-details">
                         <p><i class="fas fa-trophy"></i> Final project: RoutePy, a Python-based bus fleet management
@@ -541,15 +545,17 @@
                 Professional Experience
             </h2>
             <div class="section-content">
-                <div class="experience-item">
+                <div class="experience-item" itemprop="workExperience" itemscope itemtype="http://schema.org/Organization">
                     <div class="item-header">
                         <div>
-                            <div class="item-title">Business Manager</div>
-                            <div class="item-subtitle">Shovon Electronics, Dhaka, Bangladesh (Part-time)</div>
+                            <div class="item-title" itemprop="jobTitle">Business Manager</div>
+                            <div class="item-subtitle" itemprop="name">Shovon Electronics, <span itemprop="addressLocality">Dhaka, Bangladesh</span> (Part-time)</div>
                         </div>
-                        <div class="item-date">Feb 2021 – Dec 2021</div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2021-02">Feb 2021</span> – <span itemprop="endDate" content="2021-12">Dec 2021</span>
+                        </div>
                     </div>
-                    <div class="item-details">
+                    <div class="item-details" itemprop="description">
                         <ul>
                             <li><i class="fas fa-exchange-alt"></i> Took over management after father's demise,
                                 ownership transferred to mother</li>
@@ -631,24 +637,24 @@
                 Projects
             </h2>
             <div class="section-content">
-                <div class="project-item">
-                    <div class="item-title"><i class="fas fa-bus"></i> RoutePy (Python)</div>
-                    <div class="item-subtitle">Bus fleet management system for Stanford Code in Place final project
+                <div class="project-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                    <div class="item-title" itemprop="name"><i class="fas fa-bus"></i> RoutePy (Python)</div>
+                    <div class="item-subtitle" itemprop="description">Bus fleet management system for Stanford Code in Place final project
                     </div>
                     <a href="https://github.com/MushfiqPlabon/RoutePy"
-                        class="project-link">github.com/MushfiqPlabon/RoutePy</a>
+                        class="project-link" itemprop="url">github.com/MushfiqPlabon/RoutePy</a>
                 </div>
-                <div class="project-item">
-                    <div class="item-title"><i class="fas fa-book"></i> libMan (Django)</div>
-                    <div class="item-subtitle">Library management system with Django framework</div>
+                <div class="project-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                    <div class="item-title" itemprop="name"><i class="fas fa-book"></i> libMan (Django)</div>
+                    <div class="item-subtitle" itemprop="description">Library management system with Django framework</div>
                     <a href="https://github.com/MushfiqPlabon/libMan"
-                        class="project-link">github.com/MushfiqPlabon/libMan</a>
+                        class="project-link" itemprop="url">github.com/MushfiqPlabon/libMan</a>
                 </div>
-                <div class="project-item">
-                    <div class="item-title"><i class="fas fa-calendar-alt"></i> EventMan (Django + Tailwind CSS)</div>
-                    <div class="item-subtitle">Event management system with responsive front-end</div>
+                <div class="project-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                    <div class="item-title" itemprop="name"><i class="fas fa-calendar-alt"></i> EventMan (Django + Tailwind CSS)</div>
+                    <div class="item-subtitle" itemprop="description">Event management system with responsive front-end</div>
                     <a href="https://github.com/MushfiqPlabon/EventMan"
-                        class="project-link">github.com/MushfiqPlabon/EventMan</a>
+                        class="project-link" itemprop="url">github.com/MushfiqPlabon/EventMan</a>
                 </div>
             </div>
         </div>
