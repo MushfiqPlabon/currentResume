@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>---------- - Europass CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #003399;
+            /* Europass blue */
+            --secondary-color: #f0f0f0;
+            /* Light grey for background/borders */
+            --text-color: #333333;
+            --header-bg: #e0e0e0;
+            --border-color: #cccccc;
+            --font-size-base: 10pt;
+            --line-height-base: 1.3;
+            --sidebar-width: 40%;
+            --main-content-width: 60%;
+            --padding-horizontal: 15mm;
+            --padding-vertical: 15mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            color: var(--text-color);
+            background-color: #ffffff;
+            /* Ensure white background for print */
+            -webkit-print-color-adjust: exact;
+            /* For printing colors */
+            print-color-adjust: exact;
+        }
+
+        .europass-container {
+            width: 210mm;
+            /* A4 width */
+            min-height: 297mm;
+            /* A4 height */
+            margin: 0 auto;
+            padding: var(--padding-vertical) var(--padding-horizontal);
+            display: flex;
+            background-color: #ffffff;
+        }
+
+        .europass-sidebar {
+            width: var(--sidebar-width);
+            padding-right: 5mm;
+            border-right: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .europass-main-content {
+            flex-grow: 1;
+            padding-left: 10mm;
+            width: var(--main-content-width);
+            /* Explicit width for main content */
+        }
+
+        .photo-placeholder {
+            width: 40mm;
+            height: 50mm;
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3mm;
+        }
+
+        .photo-placeholder i {
+            font-size: 20mm;
+            color: var(--border-color);
+            margin-bottom: 2mm;
+        }
+
+        .photo-placeholder-text {
+            font-size: 7pt;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .sidebar-name {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2mm;
+        }
+
+        .sidebar-contact-info {
+            font-size: 9pt;
+            margin-bottom: 1mm;
+        }
+
+        .sidebar-contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .europass-section {
+            margin-bottom: 4mm;
+        }
+
+        .europass-section h2 {
+            font-size: 14pt;
+            font-weight: 500;
+            color: var(--primary-color);
+            background-color: var(--header-bg);
+            padding: 1.5mm 5mm;
+            margin-bottom: 3mm;
+            border-left: 5mm solid var(--primary-color);
+        }
+
+
+
+        .europass-section-content {
+            padding-left: 0mm;
+            /* No extra padding here, handled by main-content */
+        }
+
+        .europass-item {
+            margin-bottom: 3mm;
+        }
+
+        .europass-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1mm;
+        }
+
+        .europass-item-title {
+            font-weight: 700;
+            font-size: 11pt;
+            color: var(--text-color);
+        }
+
+        .europass-item-subtitle {
+            font-style: italic;
+            font-size: 9pt;
+            color: var(--text-color);
+        }
+
+        .europass-item-date {
+            font-size: 9pt;
+            color: var(--text-color);
+            flex-shrink: 0;
+            margin-left: 5mm;
+        }
+
+        .europass-item-details {
+            font-size: 9pt;
+            color: var(--text-color);
+            padding-left: 5mm;
+        }
+
+        .europass-item-details ul {
+            list-style-type: disc;
+            padding-left: 5mm;
+        }
+
+        .europass-item-details li {
+            margin-bottom: 1mm;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two columns for skills */
+            gap: 5mm;
+        }
+
+        .skill-category h3 {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary-color);
+            margin-bottom: 2mm;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2mm;
+        }
+
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 1mm 3mm;
+            border-radius: 2mm;
+            font-size: 8pt;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 8pt;
+            display: block;
+            margin-top: 1mm;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3mm;
+        }
+
+        .cert-item {
+            background-color: var(--secondary-color);
+            padding: 2mm 4mm;
+            border-radius: 2mm;
+            font-size: 9pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2mm;
+            font-size: 9pt;
+        }
+
+        .language-proficiency {
+            font-style: italic;
+            color: var(--text-color);
+        }
+
+        .interests-text {
+            font-size: 9pt;
+        }
+
+        /* Print specific styles */
+        @media print {
+            @page {
+                margin-top: 25.4mm;
+            }
+
+            body {
+                font-size: 9pt;
+                line-height: 1.2;
+                position: relative;
+            }
+
+            .europass-container {
+                box-shadow: none;
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                padding: 10mm;
+            }
+
+            .europass-section {
+                page-break-inside: avoid;
+                margin-bottom: 2mm;
+            }
+
+            .europass-section h2 {
+                page-break-before: avoid;
+                font-size: 12pt;
+                margin-bottom: 2mm;
+            }
+
+            .europass-item {
+                margin-bottom: 1.5mm;
+            }
+
+            .europass-item-title {
+                font-size: 10pt;
+            }
+
+            .europass-item-details {
+                font-size: 8pt;
+            }
+
+            .skills-grid {
+                column-count: 2;
+                column-gap: 3mm;
+            }
+
+            .skill-category {
+                break-inside: avoid-column;
+                margin-bottom: 2mm;
+            }
+
+            .skill-category h3 {
+                font-size: 9pt;
+            }
+
+            .skill-tag {
+                font-size: 7pt;
+            }
+
+            .cert-item {
+                font-size: 8pt;
+            }
+
+            .language-item {
+                font-size: 8pt;
+            }
+
+            .interests-text {
+                font-size: 8pt;
+            }
+
+            .europass-main-content .europass-section:nth-of-type(5) {
+
+                page-break-before: always;
+
+                position: absolute;
+
+                left: 50%;
+
+                transform: translateX(-50%);
+
+                width: 210mm;
+                /* Full A4 width */
+
+                text-align: center;
+
+                box-sizing: border-box;
+                /* Ensure padding is included in width */
+
+                padding-left: var(--padding-horizontal);
+                /* Maintain original padding for content */
+
+                padding-right: var(--padding-horizontal);
+                /* Maintain original padding for content */
+
+                top: 101%;
+                /* Push down by 101% of body height */
+
+            }
+    </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/Person">
+    <div class="europass-container">
+        <aside class="europass-sidebar">
+            <div class="photo-placeholder">
+                <i class="fas fa-user-circle"></i>
+                <p class="photo-placeholder-text">Your Photo</p>
+            </div>
+            <h1 class="sidebar-name" itemprop="name">----------</h1>
+            <p class="sidebar-contact-info">
+                <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="addressLocality">----------</span>, <span itemprop="addressCountry">----------</span>
+                </span>
+            </p>
+            <p class="sidebar-contact-info">
+                <a href="mailto:---@---.com" itemprop="email">---@---.com</a>
+            </p>
+            <p class="sidebar-contact-info">
+                <span itemprop="telephone">-----------</span>
+            </p>
+            <p class="sidebar-contact-info">
+                <a href="https://github.com/----------" itemprop="url">github.com/----------</a>
+            </p>
+            <p class="sidebar-contact-info">
+                <a href="https://linkedin.com/in/mushfiq-plaban" itemprop="url">linkedin.com/in/mushfiq-plaban</a>
+            </p>
+            <!-- SKILLS SECTION -->
+            <section class="europass-section">
+                <h2>Skills</h2>
+                <div class="europass-section-content skills-grid">
+                    <div class="skill-category">
+                        <h3>Business & Management</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Business management</span>
+                            <span class="skill-tag">Client coordination</span>
+                            <span class="skill-tag">Administrative tasks</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Adaptability</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technical</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Python (basic)</span>
+                            <span class="skill-tag">JavaScript (basic)</span>
+                            <span class="skill-tag">Django (basic)</span>
+                            <span class="skill-tag">React.js (basic)</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI & Productivity Tools</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">ChatGPT</span>
+                            <span class="skill-tag">GitHub Copilot</span>
+                            <span class="skill-tag">Gemini-CLI</span>
+                            <span class="skill-tag">Qwen3-Coder</span>
+                            <span class="skill-tag">Microsoft Office</span>
+                            <span class="skill-tag">Google Workspace</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technical Support</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">PC setup</span>
+                            <span class="skill-tag">OS installation</span>
+                            <span class="skill-tag">OS optimization</span>
+                            <span class="skill-tag">Device configuration</span>
+                            <span class="skill-tag">Maintainance</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- LANGUAGES SECTION -->
+            <section class="europass-section">
+                <h2>Languages</h2>
+                <div class="europass-section-content">
+                    <div class="language-item">
+                        <div>Bengali</div>
+                        <div class="language-proficiency">Native</div>
+                    </div>
+                    <div class="language-item">
+                        <div>English</div>
+                        <div class="language-proficiency">Professional working ability</div>
+                    </div>
+                    <div class="language-item">
+                        <div>Hindi</div>
+                        <div class="language-proficiency">Elementary ability</div>
+                    </div>
+                    <div class="language-item">
+                        <div>Urdu</div>
+                        <div class="language-proficiency">Elementary ability</div>
+                    </div>
+                </div>
+            </section>
+            <!-- INTERESTS SECTION -->
+            <section class="europass-section">
+                <h2>Interests</h2>
+                <div class="europass-section-content">
+                    <ul class="interests-text">
+                        <li>AI workflow automation</li>
+                        <li>Tech tinkering & experimentation</li>
+                        <li>Gaming & series</li>
+                        <li>Broad learning across subjects</li>
+                        <li>Career growth, networking, and future-proofing skills</li>
+                    </ul>
+                </div>
+            </section>
+        </aside>
+
+        <main class="europass-main-content">
+            <section class="europass-section">
+                <h2>Professional Summary</h2>
+                <div class="europass-section-content">
+                    <p itemprop="description">Tech-savvy and highly adaptable BBA (Marketing) student with a sturdy
+                        foundation in business management, web development, and AI-assisted workflow optimization.
+                        Experienced in informal tech support and problem-solving, with a passion for continuous
+                        learning, full-stack experimentation, and AI integration to improve efficiency. I am skilled at
+                        balancing business, education, and self-directed technical projects.</p>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Work Experience</h2>
+                <div class="europass-section-content">
+                    <div class="europass-item" itemprop="workExperience" itemscope
+                        itemtype="http://schema.org/Organization">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="jobTitle">Business Manager</div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2021-02">Feb 2021</span> – <span itemprop="endDate"
+                                    content="2021-12">Dec 2021</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-subtitle" itemprop="name">Shovon Electronics, Dhaka, Bangladesh</div>
+                        <div class="europass-item-details" itemprop="description">
+                            <ul>
+                                <li>Took over business management, father passed and ownership transfer to mother.</li>
+                                <li>Managed operations for institutional clients, including Institute of Engineers,
+                                    Bangladesh (IEB).</li>
+                                <li>Oversaw administrative tasks, procurement, legal formalities, and employee
+                                    management.</li>
+                                <li>Balanced business responsibilities with BBA studies and self-learning in web
+                                    technologies.</li>
+                                <li>Closed business strategically to focus on education and skill development.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="europass-item" itemprop="workExperience" itemscope
+                        itemtype="http://schema.org/Organization">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="jobTitle">Informal Tech Support & Troubleshooting
+                            </div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2014-01">2014</span> – <span itemprop="endDate"
+                                    content="2025-10">Present</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-subtitle" itemprop="name">Family & Friends, Dhaka, Bangladesh</div>
+                        <div class="europass-item-details" itemprop="description">
+                            <ul>
+                                <li>Provided technical support for PCs, Windows/Linux, and devices.</li>
+                                <li>Installed and configured operating systems, optimized system performance.</li>
+                                <li>Selected OS and configurations strategically based on hardware capabilities.</li>
+                                <li>Aided friends and family in problem-solving and device setup.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Education and Training</h2>
+                <div class="europass-section-content">
+                    <div class="europass-item" itemprop="education" itemscope
+                        itemtype="http://schema.org/EducationalOccupationalCredential">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="name">Phitron AI/ML Course</div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2025-01">2025</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-subtitle" itemprop="provider">Phitron</div>
+                        <div class="europass-item-details">
+                            <ul>
+                                <li>Recently enrolled, awaiting completion</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="europass-item" itemprop="education" itemscope
+                        itemtype="http://schema.org/EducationalOccupationalCredential">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="name">CS Fundamentals with Phitron: Fall 2024
+                            </div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2024-10">Oct 2024</span> – <span itemprop="endDate"
+                                    content="2025-09">Sept 2025</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-details">
+                            <ul>
+                                <li>Learned Basic Programming, Data Structures, Algorithms, OOP, Database</li>
+                                <li>Built HomeSer as final full stack project.</li>
+                                <li>Awaiting results & certificate</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="europass-item" itemprop="education" itemscope
+                        itemtype="http://schema.org/EducationalOccupationalCredential">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="name">Stanford Code in Place 2025 – Python
+                                Fundamentals</div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2025-04">Apr 2025</span> – <span itemprop="endDate"
+                                    content="2025-06">Jun 2025</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-subtitle" itemprop="provider">Stanford University</div>
+                        <div class="europass-item-details">
+                            <ul>
+                                <li>Built final project RoutePy (bus fleet management system)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="europass-item" itemprop="education" itemscope
+                        itemtype="http://schema.org/EducationalOccupationalCredential">
+                        <div class="europass-item-header">
+                            <div class="europass-item-title" itemprop="name">Bachelor of Business Administration (BBA),
+                                Marketing</div>
+                            <div class="europass-item-date">
+                                <span itemprop="startDate" content="2019-06">Jun 2019</span> – <span itemprop="endDate"
+                                    content="2025-09">Sep 2025</span>
+                            </div>
+                        </div>
+                        <div class="europass-item-subtitle" itemprop="provider">National University, Bangladesh</div>
+                        <div class="europass-item-details">
+                            <ul>
+                                <li>Awaiting results & certificate</li>
+                                <li>GPA (up to third year): 2.63</li>
+                                <li>Key subjects: Marketing, Organizational Behavior, Advertising & Promotion, Business
+                                    Communication, Legal Aspects of Marketing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="europass-section">
+                <h2>Projects</h2>
+                <div class="europass-section-content">
+                    <div class="europass-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                        <div class="europass-item-title" itemprop="name">HomeSer Frontend (React.js)</div>
+                        <div class="europass-item-subtitle" itemprop="description">Responsive front-end for household
+                            service platform</div>
+                        <a href="https://github.com/MushfiqPlabon/homeser-frontend-react" class="project-link"
+                            itemprop="url">github.com/MushfiqPlabon/homeser-frontend-react</a>
+                    </div>
+                    <div class="europass-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                        <div class="europass-item-title" itemprop="name">HomeSer Backend (Python/Django)</div>
+                        <div class="europass-item-subtitle" itemprop="description">REST API backend for service requests
+                            and management</div>
+                        <a href="https://github.com/MushfiqPlabon/homeser-backend-drf" class="project-link"
+                            itemprop="url">github.com/MushfiqPlabon/homeser-backend-drf</a>
+                    </div>
+                    <div class="europass-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                        <div class="europass-item-title" itemprop="name">libMan (Django)</div>
+                        <div class="europass-item-subtitle" itemprop="description">Library management REST API</div>
+                        <a href="https://github.com/MushfiqPlabon/libMan" class="project-link"
+                            itemprop="url">github.com/MushfiqPlabon/libMan</a>
+                    </div>
+                </div>
+            </section>
+
+            <br>
+
+            <section class="europass-section">
+                <h2>Certifications</h2>
+                <div class="europass-section-content cert-list">
+                    <div class="cert-item">Stanford Code in Place 2025 – Python Fundamentals</div>
+                    <div class="cert-item">Coursera – Introduction to Data Analysis using Microsoft Excel (Sep 2025)
+                    </div>
+                    <div class="cert-item">Coursera – Introduction to Microsoft Excel (Jan 2025)</div>
+                    <div class="cert-item">Sololearn – Coding for Marketers (Aug 2022)</div>
+                    <div class="cert-item">Sololearn – Web Development Fundamentals (Aug 2022)</div>
+                    <div class="cert-item">Sololearn – JavaScript (Jul 2022)</div>
+                    <div class="cert-item">Sololearn – React + Redux Course (Mar 2022)</div>
+                    <div class="cert-item">Sololearn – CSS Course (Aug 2020)</div>
+                    <div class="cert-item">Sololearn – HTML Course (Aug 2019)</div>
+                    <div class="cert-item">freeCodeCamp – Responsive Web Design (Apr 2022)</div>
+                    <div class="cert-item">HackerRank – CSS (Basic) (Oct 2024)</div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

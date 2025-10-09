@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>---------- - Resume</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Futura:wght@400;500;700&family=HarmonyOS+Sans+SC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3949ab;
+            --primary-light: #6f74dd;
+            --primary-dark: #00227b;
+            --secondary-color: #00897b;
+            --text-on-primary: #ffffff;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --background: #f5f7fa;
+            --card-bg: #ffffff;
+            --accent: #ff7043;
+            --accent-light: rgba(255, 112, 67, 0.1);
+            --max-content-width: 170mm;
+            /* 210mm - 20mm padding on each side */
+            --content-padding: 0 10mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'HarmonyOS Sans SC', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.4;
+            font-size: 9pt;
+        }
+
+        .resume-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10mm;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resume-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5mm;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4mm;
+        }
+
+        .header-content {
+            flex: 1;
+            padding-left: 5mm;
+            border-left: 2mm solid var(--primary-color);
+        }
+
+        .photo-placeholder {
+            width: 45mm;
+            height: 55mm;
+            background-color: rgba(57, 73, 171, 0.1);
+            border: 1mm dashed var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10mm;
+            border-radius: 2mm;
+        }
+
+        .photo-placeholder i {
+            font-size: 16mm;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        .photo-placeholder-text {
+            font-size: 8pt;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 0 2mm;
+        }
+
+        .name {
+            font-family: 'Futura', sans-serif;
+            font-size: 24pt;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 2mm;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3mm;
+            font-size: 9pt;
+            color: var(--text-secondary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item i {
+            font-size: 10pt;
+            margin-right: 2mm;
+            color: var(--primary-color);
+        }
+
+        .section {
+            margin-bottom: 3mm;
+            width: 100%;
+            max-width: var(--max-content-width);
+            box-sizing: border-box;
+        }
+
+        .section-content {
+            padding: var(--content-padding);
+        }
+
+        .section-title {
+            font-family: 'Futura', sans-serif;
+            font-size: 12pt;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2mm;
+            padding-bottom: 1mm;
+            border-bottom: 1mm solid var(--primary-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 3mm;
+            font-size: 12pt;
+        }
+
+        .summary {
+            font-size: 9pt;
+            line-height: 1.4;
+            margin-bottom: 3mm;
+        }
+
+        .education-item,
+        .experience-item,
+        .project-item {
+            margin-bottom: 3mm;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1mm;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--primary-dark);
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 9pt;
+        }
+
+        .item-date {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 9pt;
+        }
+
+        .item-details {
+            font-size: 8pt;
+            color: var(--text-primary);
+            padding-left: 4mm;
+        }
+
+        .item-details ul {
+            list-style-type: none;
+        }
+
+        .item-details li {
+            position: relative;
+            padding-left: 4mm;
+            margin-bottom: 1mm;
+        }
+
+        .item-details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .two-column-section {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 3mm;
+        }
+
+        #projects-section .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .skill-category {
+            margin-bottom: 2mm;
+        }
+
+        .skill-category-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1mm;
+            font-size: 10pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category-title i {
+            margin-right: 2mm;
+            font-size: 9pt;
+            color: var(--primary-color);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2mm;
+        }
+
+        .skill-tag {
+            background-color: rgba(57, 73, 171, 0.1);
+            color: var(--primary-dark);
+            padding: 1mm 2mm;
+            border-radius: 10mm;
+            font-size: 8pt;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 8pt;
+            display: block;
+            margin-top: 1mm;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2mm;
+        }
+
+        .cert-item {
+            background-color: rgba(0, 137, 123, 0.1);
+            padding: 1mm 3mm;
+            border-radius: 2mm;
+            font-size: 8pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .cert-item i {
+            margin-right: 2mm;
+            font-size: 8pt;
+            color: var(--secondary-color);
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1mm;
+            font-size: 9pt;
+            padding-left: 4mm;
+            width: 100%;
+            max-width: var(--max-content-width);
+            box-sizing: border-box;
+        }
+
+        .language-item i {
+            margin-right: 2mm;
+            color: var(--primary-color);
+        }
+
+        .language-proficiency {
+            color: var(--text-secondary);
+        }
+
+        .interests {
+            font-size: 9pt;
+            line-height: 1.4;
+            padding: 0 4mm;
+            width: 100%;
+            max-width: var(--max-content-width);
+            box-sizing: border-box;
+            margin-left: 0;
+        }
+
+        .highlight {
+            background-color: var(--accent-light);
+            padding: 1mm 2mm;
+            border-radius: 1mm;
+            font-weight: 500;
+        }
+
+        .note {
+            font-size: 8pt;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 1mm;
+        }
+
+        .goals-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+            margin-top: 3mm;
+        }
+
+        .goal-box {
+            background-color: rgba(57, 73, 171, 0.05);
+            border-left: 2mm solid var(--primary-color);
+            padding: 2mm;
+            border-radius: 1mm;
+        }
+
+        .goal-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1mm;
+            font-size: 10pt;
+            display: flex;
+            align-items: center;
+        }
+
+        .goal-title i {
+            margin-right: 2mm;
+            color: var(--primary-color);
+            font-size: 9pt;
+        }
+
+        .goal-content {
+            font-size: 8pt;
+            line-height: 1.4;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            font-size: 7pt;
+            padding: 1mm 2mm;
+            border-radius: 10mm;
+            margin-left: 2mm;
+            font-weight: 500;
+        }
+
+        .learning-indicator {
+            position: relative;
+            display: inline-block;
+        }
+
+        .learning-indicator::after {
+            content: "📚";
+            position: absolute;
+            top: -2mm;
+            right: -3mm;
+            font-size: 7pt;
+        }
+
+        .emphasis {
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        @media print {
+            @page {
+                margin-top: 25.4mm;
+            }
+
+            body {
+                background-color: white;
+                font-size: 8.5pt;
+            }
+
+            .header {
+                margin-bottom: 2mm;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                padding: 8mm;
+            }
+
+            .section {
+                margin-bottom: 2mm;
+            }
+
+            .section-title {
+                font-size: 11pt;
+                margin-bottom: 1.5mm;
+            }
+
+            .item-header {
+                margin-bottom: 0.5mm;
+            }
+
+            .education-item,
+            .experience-item,
+            .project-item {
+                margin-bottom: 1.5mm;
+            }
+
+            .item-details {
+                font-size: 8pt;
+                line-height: 1.2;
+            }
+
+            .cert-list, .skill-list {
+                gap: 1mm;
+            }
+
+            .cert-item, .skill-tag {
+                font-size: 7pt;
+                padding: 0.5mm 1.5mm;
+            }
+
+            #technical-skills-section {
+                page-break-inside: avoid;
+                page-break-before: auto;
+            }
+
+            #projects-section {
+                padding-top: 25.4mm;
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/Person">
+    <div class="resume-container">
+        <!-- Header/Contact Information -->
+        <div class="header">
+            <div class="header-content">
+                <h1 class="name" itemprop="name">----------</h1>
+                <div class="contact-info">
+                    <div class="contact-item" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span itemprop="addressLocality">----------</span>, <span itemprop="addressCountry">----------</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:---@---.com" itemprop="email">---@---.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span itemprop="telephone">-----------</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/----------" itemprop="url">github.com/----------</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/mushfiq-plaban" itemprop="url">linkedin.com/in/mushfiq-plaban</a>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-placeholder">
+                <i class="fas fa-user-circle"></i>
+                <p class="photo-placeholder-text">Your Photo</p>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-user"></i>
+                Professional Summary
+            </h2>
+            <div class="section-content">
+                <p class="summary" itemprop="description">
+                    Tech-savvy and highly adaptable BBA (Marketing) student with a sturdy foundation in business management, web development, and AI-assisted workflow optimization. Experienced in informal tech support and problem-solving, with a passion for continuous learning, full-stack experimentation, and AI integration to improve efficiency. I am skilled at balancing business, education, and self-directed technical projects.
+                </p>
+
+                <div class="goals-container">
+                    <div class="goal-box">
+                        <div class="goal-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Academic Goals
+                        </div>
+                        <div class="goal-content">
+                            Completing BBA in Marketing (final year). Seeking master's program or <span
+                                class="emphasis">second bachelor's in a different discipline</span> to future-proof
+                            career against AI disruption and broaden knowledge base through interdisciplinary learning.
+                        </div>
+                    </div>
+
+                    <div class="goal-box">
+                        <div class="goal-title">
+                            <i class="fas fa-briefcase"></i>
+                            Career Goals
+                        </div>
+                        <div class="goal-content">
+                            Building a career bridging <span class="emphasis">multiple disciplines</span>, creating
+                            value at the intersection of diverse fields. Seeking opportunities with continuous growth,
+                            diverse perspectives, and freedom to explore beyond conventional limits.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i>
+                Professional Experience
+            </h2>
+            <div class="section-content">
+                <div class="experience-item" itemprop="workExperience" itemscope itemtype="http://schema.org/Organization">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title" itemprop="jobTitle">Business Manager</div>
+                            <div class="item-subtitle" itemprop="name">Shovon Electronics, <span itemprop="addressLocality">Dhaka, Bangladesh</span></div>
+                        </div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2021-02">Feb 2021</span> – <span itemprop="endDate" content="2021-12">Dec 2021</span>
+                        </div>
+                    </div>
+                    <div class="item-details" itemprop="description">
+                        <ul>
+                            <li><i class="fas fa-exchange-alt"></i> Took over business management, father passed and ownership transfer to mother.</li>
+                            <li><i class="fas fa-building"></i> Managed operations for institutional clients, including Institute of Engineers, Bangladesh (IEB).</li>
+                            <li><i class="fas fa-tasks"></i> Oversaw administrative tasks, procurement, legal formalities, and employee management.</li>
+                            <li><i class="fas fa-balance-scale"></i> Balanced business responsibilities with BBA studies and self-learning in web technologies.</li>
+                            <li><i class="fas fa-door-closed"></i> Closed business strategically to focus on education and skill development.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item" itemprop="workExperience" itemscope itemtype="http://schema.org/Organization">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title" itemprop="jobTitle">Informal Tech Support & Troubleshooting</div>
+                            <div class="item-subtitle" itemprop="name">Family & Friends, <span itemprop="addressLocality">Dhaka, Bangladesh</span></div>
+                        </div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2014-01">2014</span> – <span itemprop="endDate" content="2025-10">Present</span>
+                        </div>
+                    </div>
+                    <div class="item-details" itemprop="description">
+                        <ul>
+                            <li><i class="fas fa-life-ring"></i> Provided technical support for PCs, Windows/Linux, and devices.</li>
+                            <li><i class="fas fa-cogs"></i> Installed and configured operating systems, optimized system performance.</li>
+                            <li><i class="fas fa-check-circle"></i> Selected OS and configurations strategically based on hardware capabilities.</li>
+                            <li><i class="fas fa-users"></i> Aided friends and family in problem-solving and device setup.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Education
+            </h2>
+            <div class="section-content">
+                <div class="education-item" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title" itemprop="name">Phitron AI/ML Course</div>
+                            <div class="item-subtitle" itemprop="provider">Phitron</div>
+                        </div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2025-01">2025</span> (recently enrolled, awaiting completion)
+                        </div>
+                    </div>
+                </div>
+                <div class="education-item" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title" itemprop="name">CS Fundamentals with Phitron: Fall 2024</div>
+                        </div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2024-10">Oct 2024</span> – <span itemprop="endDate" content="2025-09">Sept 2025</span> (awaiting results & certificate)
+                        </div>
+                    </div>
+                    <div class="item-details">
+                        <p><i class="fas fa-book"></i> Learned Basic Programming, Data Structures, Algorithms, OOP, Database</p>
+                        <p><i class="fas fa-project-diagram"></i> Built HomeSer as final full stack project.</p>
+                    </div>
+                </div>
+                <div class="education-item" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title" itemprop="name">Stanford Code in Place 2025 – Python Fundamentals</div>
+                            <div class="item-subtitle" itemprop="provider">Stanford University</div>
+                        </div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2025-04">Apr 2025</span> – <span itemprop="endDate" content="2025-06">Jun 2025</span>
+                        </div>
+                    </div>
+                    <div class="item-details">
+                        <p><i class="fas fa-trophy"></i> Built final project RoutePy (bus fleet management system)</p>
+                    </div>
+                </div>
+                <div class="education-item" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title" itemprop="name">Bachelor of Business Administration (BBA), Marketing</div>
+                            <div class="item-subtitle" itemprop="provider">National University, Bangladesh</div>
+                        </div>
+                        <div class="item-date">
+                            <span itemprop="startDate" content="2019-06">Jun 2019</span> – <span itemprop="endDate" content="2025-09">Sep 2025</span> (awaiting results & certificate)
+                        </div>
+                    </div>
+                    <div class="item-details">
+                        <p><i class="fas fa-chart-line"></i> GPA (up to third year): 2.63</p>
+                        <p><i class="fas fa-book"></i> Key subjects: Marketing, Organizational Behavior, Advertising & Promotion, Business Communication, Legal Aspects of Marketing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section" id="projects-section">
+            <h2 class="section-title">
+                <i class="fas fa-project-diagram"></i>
+                Projects
+            </h2>
+            <div class="section-content">
+                <div class="project-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                    <div class="item-title" itemprop="name"><i class="fas fa-home"></i> HomeSer Frontend (React.js)</div>
+                    <div class="item-subtitle" itemprop="description">Responsive front-end for household service platform</div>
+                    <a href="https://github.com/MushfiqPlabon/homeser-frontend-react" class="project-link" itemprop="url">github.com/MushfiqPlabon/homeser-frontend-react</a>
+                </div>
+                <div class="project-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                    <div class="item-title" itemprop="name"><i class="fas fa-server"></i> HomeSer Backend (Python/Django)</div>
+                    <div class="item-subtitle" itemprop="description">REST API backend for service requests and management</div>
+                    <a href="https://github.com/MushfiqPlabon/homeser-backend-drf" class="project-link" itemprop="url">github.com/MushfiqPlabon/homeser-backend-drf</a>
+                </div>
+                <div class="project-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                    <div class="item-title" itemprop="name"><i class="fas fa-bus"></i> RoutePy (Python)</div>
+                    <div class="item-subtitle" itemprop="description">Bus fleet management system (Stanford CIP final project)</div>
+                    <a href="https://github.com/MushfiqPlabon/RoutePy" class="project-link" itemprop="url">github.com/MushfiqPlabon/RoutePy</a>
+                </div>
+                <div class="project-item" itemprop="hasPart" itemscope itemtype="http://schema.org/CreativeWork">
+                    <div class="item-title" itemprop="name"><i class="fas fa-book"></i> libMan (Django)</div>
+                    <div class="item-subtitle" itemprop="description">Library management REST API</div>
+                    <a href="https://github.com/MushfiqPlabon/libMan" class="project-link" itemprop="url">github.com/MushfiqPlabon/libMan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section" id="technical-skills-section">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Skills
+            </h2>
+            <div class="section-content">
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-category-title"><i class="fas fa-briefcase"></i> Business & Management</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Business management</span>
+                            <span class="skill-tag">Client coordination</span>
+                            <span class="skill-tag">Administrative tasks</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Adaptability</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title"><i class="fas fa-laptop-code"></i> Technical</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Python (basic)</span>
+                            <span class="skill-tag">JavaScript (basic)</span>
+                            <span class="skill-tag">Django (basic)</span>
+                            <span class="skill-tag">React.js (basic)</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title"><i class="fas fa-robot"></i> AI & Productivity Tools</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">ChatGPT</span>
+                            <span class="skill-tag">GitHub Copilot</span>
+                            <span class="skill-tag">Gemini-CLI</span>
+                            <span class="skill-tag">Qwen3-Coder</span>
+                            <span class="skill-tag">Microsoft Office</span>
+                            <span class="skill-tag">Google Workspace</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-category-title"><i class="fas fa-tools"></i> Technical Support</div>
+                        <div class="skill-list">
+                            <span class="skill-tag">PC setup</span>
+                            <span class="skill-tag">OS installation</span>
+                            <span class="skill-tag">OS optimization</span>
+                            <span class="skill-tag">Device configuration</span>
+                            <span class="skill-tag">Maintainance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-certificate"></i>
+                Certifications
+            </h2>
+            <div class="section-content">
+                <div class="cert-list">
+                    <div class="cert-item"><i class="fas fa-university"></i> Stanford Code in Place 2025 – Python Fundamentals</div>
+                    <div class="cert-item"><i class="fas fa-chart-bar"></i> Coursera – Introduction to Data Analysis using Microsoft Excel (Sep 2025)</div>
+                    <div class="cert-item"><i class="fas fa-file-excel"></i> Coursera – Introduction to Microsoft Excel (Jan 2025)</div>
+                    <div class="cert-item"><i class="fas fa-bullhorn"></i> Sololearn – Coding for Marketers (Aug 2022)</div>
+                    <div class="cert-item"><i class="fas fa-laptop-code"></i> Sololearn – Web Development Fundamentals (Aug 2022)</div>
+                    <div class="cert-item"><i class="fab fa-js-square"></i> Sololearn – JavaScript (Jul 2022)</div>
+                    <div class="cert-item"><i class="fab fa-react"></i> Sololearn – React + Redux Course (Mar 2022)</div>
+                    <div class="cert-item"><i class="fab fa-css3-alt"></i> Sololearn – CSS Course (Aug 2020)</div>
+                    <div class="cert-item"><i class="fab fa-html5"></i> Sololearn – HTML Course (Aug 2019)</div>
+                    <div class="cert-item"><i class="fas fa-mobile-alt"></i> freeCodeCamp – Responsive Web Design (Apr 2022)</div>
+                    <div class="cert-item"><i class="fab fa-css3"></i> HackerRank – CSS (Basic) (Oct 2024)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="two-column-section">
+            <!-- Languages -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-language"></i>
+                    Languages
+                </h2>
+                <div class="section-content">
+                    <div class="language-item">
+                        <div><i class="fas fa-comments"></i> Bengali</div>
+                        <div class="language-proficiency">Native</div>
+                    </div>
+                    <div class="language-item">
+                        <div><i class="fas fa-comments"></i> English</div>
+                        <div class="language-proficiency">Professional working ability</div>
+                    </div>
+                    <div class="language-item">
+                        <div><i class="fas fa-comments"></i> Hindi</div>
+                        <div class="language-proficiency">Elementary ability</div>
+                    </div>
+                    <div class="language-item">
+                        <div><i class="fas fa-comments"></i> Urdu</div>
+                        <div class="language-proficiency">Elementary ability</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-heart"></i>
+                    Interests
+                </h2>
+                <div class="section-content">
+                    <p class="interests">
+                        <i class="fas fa-robot"></i> AI workflow automation<br>
+                        <i class="fas fa-laptop-code"></i> Tech tinkering & experimentation<br>
+                        <i class="fas fa-gamepad"></i> Gaming & series<br>
+                        <i class="fas fa-book-open"></i> Broad learning across subjects<br>
+                        <i class="fas fa-chart-line"></i> Career growth, networking, and future-proofing skills
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

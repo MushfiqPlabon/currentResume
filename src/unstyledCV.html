@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descriptive title is good for both humans and search engines -->
+    <title>---------- | Academic & Professional CV</title>
+    <!-- Add a meta description for SEO -->
+    <meta name="description"
+        content="CV for ----------, a BBA (Marketing) candidate with skills in Python, Django, JavaScript, and business management.">
+    <!-- Use a simple, readable font for a clean look -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <!-- Tailwind CSS for styling the web version -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* General body styles for both web and print */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+        }
+
+        /* --- Web-specific Styles (visible on screen) --- */
+        .cv-container {
+            max-width: 80rem;
+            /* Use a larger max-width for a cleaner web view */
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #f3f4f6;
+        }
+
+        @media (max-width: 640px) {
+            .cv-container {
+                padding: 1rem;
+            }
+        }
+
+        .photo-placeholder {
+            width: 45mm;
+            height: 55mm;
+            border: 2px dashed #9ca3af;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.75rem;
+            /* 12px */
+            padding: 0.5rem;
+            flex-shrink: 0;
+            margin-left: 2rem;
+        }
+
+        /* --- Print-specific Styles (for a clean, printable PDF) --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 20mm;
+                margin-top: 25.4mm;
+            }
+
+            body {
+                background-color: #ffffff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                padding: 0;
+                margin: 0;
+                font-size: 8pt;
+                line-height: 1.2;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                border: none;
+                width: 190mm;
+                min-height: 277mm;
+                margin: 0;
+                padding: 5mm;
+                overflow: visible;
+            }
+
+            h1 {
+                color: #000000 !important;
+                font-size: 18pt;
+                line-height: 1.1;
+            }
+
+            h2 {
+                color: #000000 !important;
+                font-size: 12pt;
+                line-height: 1.2;
+            }
+
+            h3 {
+                color: #000000 !important;
+                font-size: 10pt;
+                line-height: 1.3;
+            }
+
+            p,
+            li {
+                color: #374151 !important;
+                font-size: 8pt;
+                line-height: 1.2;
+            }
+
+            a {
+                color: #374151 !important;
+                text-decoration: none;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+
+            .photo-placeholder {
+                border: 2px solid #000;
+                background-color: #fff;
+                color: #000;
+                width: 40mm !important;
+                height: 50mm !important;
+                font-size: 6pt !important;
+                padding: 0.2rem !important;
+                margin-left: 5mm !important;
+            }
+
+            .photo-placeholder p {
+                line-height: 1.1 !important;
+            }
+
+            .text-xs {
+                font-size: 7pt !important;
+            }
+
+            .text-sm {
+                font-size: 8pt !important;
+            }
+
+            .mb-6 {
+                margin-bottom: 1.5mm !important;
+            }
+
+            .mb-2 {
+                margin-bottom: 0.5mm !important;
+            }
+
+            .mb-1 {
+                margin-bottom: 0.25mm !important;
+            }
+
+            .mt-1 {
+                margin-top: 0.25mm !important;
+            }
+
+            .space-y-0\.5 > :not([hidden]) ~ :not([hidden]) {
+                --tw-space-y-reverse: 0;
+                margin-top: calc(0.25mm * calc(1 - var(--tw-space-y-reverse))) !important;
+                margin-bottom: calc(0.25mm * var(--tw-space-y-reverse)) !important;
+            }
+
+            .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+                --tw-space-y-reverse: 0;
+                margin-top: 0.5mm !important;
+                margin-bottom: 0.5mm !important;
+            }
+
+            .gap-1 {
+                gap: 0.5mm !important;
+            }
+
+            .gap-6 {
+                gap: 2mm !important;
+            }
+
+            .list-disc {
+                padding-left: 3mm !important;
+            }
+
+            #skills-section {
+                page-break-before: always;
+                padding-top: 25.4mm;
+            }
+        }
+    </style>
+</head>
+<!-- Use itemscope and itemtype to define the document as a resume for structured data parsers like ATS -->
+
+<body class="bg-gray-100 p-4 sm:p-8" itemscope itemtype="http://schema.org/Person">
+
+    <!-- Main container for the CV content. -->
+    <div class="cv-container">
+
+        <!-- Header Section: Your name, contact information, and profile picture -->
+        <header class="flex flex-col sm:flex-row items-center justify-between text-center sm:text-left mb-6">
+            <div class="mb-2 sm:mb-0">
+                <!-- Use itemprop for the name for machine readability -->
+                <h1 class="text-3xl font-bold text-gray-800 mb-1" itemprop="name">----------</h1>
+                <!-- itemprop for contact information -->
+                <div class="flex flex-wrap justify-center sm:justify-start items-center text-xs text-blue-600 space-x-2">
+                    <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">----------</span>, <span itemprop="addressCountry">----------</span></p>
+                    <span>|</span>
+                    <a href="mailto:---@---.com" class="hover:underline" itemprop="email">---@---.com</a>
+                    <span>|</span>
+                    <p itemprop="telephone">-----------</p>
+                    <span>|</span>
+                    <a href="https://github.com/----------" target="_blank" class="hover:underline" rel="noopener noreferrer">github.com/----------</a>
+                    <span>|</span>
+                    <a href="https://linkedin.com/in/mushfiq-plaban" target="_blank" class="hover:underline" rel="noopener noreferrer">linkedin.com/in/mushfiq-plaban</a>
+                </div>
+            </div>
+            <!-- Profile Picture Placeholder -->
+            <div class="photo-placeholder">
+                <p>Your Photo Here</p>
+            </div>
+        </header>
+
+        <!-- Main content divider for visual separation -->
+        <hr class="border-gray-200 mb-6">
+
+        <!-- Summary Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Professional Summary</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">
+                Tech-savvy and highly adaptable BBA (Marketing) student with a sturdy foundation in business management, web development, and AI-assisted workflow optimization. Experienced in informal tech support and problem-solving, with a passion for continuous learning, full-stack experimentation, and AI integration to improve efficiency. I am skilled at balancing business, education, and self-directed technical projects.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Experience</h2>
+            <div class="mb-2" itemprop="workExperience" itemscope itemtype="http://schema.org/Organization">
+                <div class="flex justify-between items-start">
+                    <h3 class="text-base font-medium text-gray-800" itemprop="jobTitle">Business Manager</h3>
+                    <span class="text-xs text-gray-500"><time itemprop="startDate" datetime="2021-02">February 2021</time> – <time itemprop="endDate" datetime="2021-12">December 2021</time></span>
+                </div>
+                <p class="text-xs text-gray-500 mb-1" itemprop="name">Shovon Electronics, <span itemprop="addressLocality">Dhaka, Bangladesh</span></p>
+                <ul class="list-disc list-inside text-gray-700 space-y-0.5 text-sm" itemprop="description">
+                    <li>Took over business management, father passed and ownership transfer to mother.</li>
+                    <li>Managed operations for institutional clients, including Institute of Engineers, Bangladesh (IEB).</li>
+                    <li>Oversaw administrative tasks, procurement, legal formalities, and employee management.</li>
+                    <li>Balanced business responsibilities with BBA studies and self-learning in web technologies.</li>
+                    <li>Closed business strategically to focus on education and skill development.</li>
+                </ul>
+            </div>
+            <div itemprop="workExperience" itemscope itemtype="http://schema.org/Organization">
+                <div class="flex justify-between items-start">
+                    <h3 class="text-base font-medium text-gray-800" itemprop="jobTitle">Informal Tech Support & Troubleshooting</h3>
+                    <span class="text-xs text-gray-500"><time itemprop="startDate" datetime="2014-01">2014</time> – <time itemprop="endDate" datetime="2025-10">Present</time></span>
+                </div>
+                <p class="text-xs text-gray-500 mb-1" itemprop="name">Family & Friends, <span itemprop="addressLocality">Dhaka, Bangladesh</span></p>
+                <ul class="list-disc list-inside text-gray-700 space-y-0.5 text-sm" itemprop="description">
+                    <li>Provided technical support for PCs, Windows/Linux, and devices.</li>
+                    <li>Installed and configured operating systems, optimized system performance.</li>
+                    <li>Selected OS and configurations strategically based on hardware capabilities.</li>
+                    <li>Aided friends and family in problem-solving and device setup.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Education</h2>
+            <div class="mb-2" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                <h3 class="text-base font-medium text-gray-800" itemprop="name">Phitron AI/ML Course</h3>
+                <p class="text-xs text-gray-500" itemprop="provider">Phitron | <span itemprop="startDate">2025</span> (recently enrolled, awaiting completion)</p>
+            </div>
+            <div class="mb-2" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                <h3 class="text-base font-medium text-gray-800" itemprop="name">CS Fundamentals with Phitron: Fall 2024</h3>
+                <p class="text-xs text-gray-500"><span itemprop="startDate">October 2024</span> – <span itemprop="endDate">September 2025</span> (awaiting results & certificate)</p>
+                <ul class="list-disc list-inside mt-1 text-gray-700 space-y-0.5 text-sm">
+                    <li>Learned Basic Programming, Data Structures, Algorithms, OOP, Database</li>
+                    <li>Built HomeSer as final full stack project.</li>
+                </ul>
+            </div>
+            <div class="mb-2" itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                <h3 class="text-base font-medium text-gray-800" itemprop="name">Stanford Code in Place 2025 – Python Fundamentals</h3>
+                <p class="text-xs text-gray-500" itemprop="provider">Stanford University | <span itemprop="startDate">April 2025</span> – <span itemprop="endDate">June 2025</span></p>
+                <ul class="list-disc list-inside mt-1 text-gray-700 space-y-0.5 text-sm">
+                    <li>Built final project RoutePy (bus fleet management system)</li>
+                </ul>
+            </div>
+            <div itemprop="education" itemscope itemtype="http://schema.org/EducationalOccupationalCredential">
+                <h3 class="text-base font-medium text-gray-800" itemprop="name">Bachelor of Business Administration (BBA), Marketing</h3>
+                <p class="text-xs text-gray-500" itemprop="provider">National University, Bangladesh | <span itemprop="startDate">June 2019</span> – <span itemprop="endDate">September 2025</span> (awaiting results & certificate)</p>
+                <ul class="list-disc list-inside mt-1 text-gray-700 space-y-0.5 text-sm">
+                    <li>Key subjects: Marketing, Organizational Behavior, Advertising & Promotion, Business Communication, Legal Aspects of Marketing</li>
+                    <li>GPA (up to third year): 2.63</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Projects</h2>
+            <div class="space-y-2">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">HomeSer Frontend (React.js)</h3>
+                        <a href="https://github.com/MushfiqPlabon/homeser-frontend-react" target="_blank" class="text-blue-600 hover:underline text-sm" rel="noopener noreferrer">github.com/MushfiqPlabon/homeser-frontend-react</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>Responsive front-end for household service platform</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">HomeSer Backend (Python/Django)</h3>
+                        <a href="https://github.com/MushfiqPlabon/homeser-backend-drf" target="_blank" class="text-blue-600 hover:underline text-sm" rel="noopener noreferrer">github.com/MushfiqPlabon/homeser-backend-drf</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>REST API backend for service requests and management</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">RoutePy (Python)</h3>
+                        <a href="https://github.com/MushfiqPlabon/RoutePy" target="_blank" class="text-blue-600 hover:underline text-sm" rel="noopener noreferrer">github.com/MushfiqPlabon/RoutePy</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>Bus fleet management system (Stanford CIP final project)</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-base font-medium text-gray-800">libMan (Django)</h3>
+                        <a href="https://github.com/MushfiqPlabon/libMan" target="_blank" class="text-blue-600 hover:underline text-sm" rel="noopener noreferrer">github.com/MushfiqPlabon/libMan</a>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 mt-0.5 text-sm">
+                        <li>Library management REST API</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="mb-6" id="skills-section">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-base font-medium text-gray-800">Business & Management</h3>
+                    <ul class="list-disc list-inside text-gray-700 text-sm">
+                        <li>Business management, Client coordination, administrative tasks, Communication, Adaptability</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-medium text-gray-800">Technical</h3>
+                    <ul class="list-disc list-inside text-gray-700 text-sm">
+                        <li>Python (basic), JavaScript (basic), Django (basic), React.js (basic), HTML5, CSS3, Bootstrap, Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-medium text-gray-800">AI & Productivity Tools</h3>
+                    <ul class="list-disc list-inside text-gray-700 text-sm">
+                        <li>ChatGPT, GitHub Copilot, Gemini-CLI, Qwen3-Coder, Microsoft Office, Google Workspace</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-base font-medium text-gray-800">Technical Support</h3>
+                    <ul class="list-disc list-inside text-gray-700 text-sm">
+                        <li>PC setup, OS installation, OS optimization, Device configuration, Maintainance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Certifications</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-0.5 text-sm">
+                <li>Stanford Code in Place 2025 – Python Fundamentals</li>
+                <li>Coursera – Introduction to Data Analysis using Microsoft Excel (Sep 2025)</li>
+                <li>Coursera – Introduction to Microsoft Excel (Jan 2025)</li>
+                <li>Sololearn – Coding for Marketers (Aug 2022)</li>
+                <li>Sololearn – Web Development Fundamentals (Aug 2022)</li>
+                <li>Sololearn – JavaScript (Jul 2022)</li>
+                <li>Sololearn – React + Redux Course (Mar 2022)</li>
+                <li>Sololearn – CSS Course (Aug 2020)</li>
+                <li>Sololearn – HTML Course (Aug 2019)</li>
+                <li>freeCodeCamp – Responsive Web Design (Apr 2022)</li>
+                <li>HackerRank – CSS (Basic) (Oct 2024)</li>
+            </ul>
+        </section>
+
+        <!-- Languages & Interests Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Languages -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-700 mb-2">Languages</h2>
+                <ul class="list-disc list-inside text-gray-700 space-y-0.5 text-sm">
+                    <li><span class="font-semibold">Bengali:</span> Native</li>
+                    <li><span class="font-semibold">English:</span> Professional working ability</li>
+                    <li><span class="font-semibold">Hindi:</span> Elementary ability</li>
+                    <li><span class="font-semibold">Urdu:</span> Elementary ability</li>
+                </ul>
+            </section>
+
+            <!-- Interests -->
+            <section>
+                <h2 class="text-xl font-semibold text-gray-700 mb-2">Interests</h2>
+                <ul class="list-disc list-inside text-gray-700 space-y-0.5 text-sm">
+                    <li>AI workflow automation</li>
+                    <li>Tech tinkering & experimentation</li>
+                    <li>Gaming & series</li>
+                    <li>Broad learning across subjects</li>
+                    <li>Career growth, networking, and future-proofing skills</li>
+                </ul>
+            </section>
+        </div>
+
+    </div>
+</body>
+
+</html>

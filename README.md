@@ -8,9 +8,10 @@ You can view the resume directly in your web browser:
 
 *   **Live Deployment:** [https://MushfiqPlabon.github.io/currentResume/](https://MushfiqPlabon.github.io/currentResume/)
 *   **Interactive Landing Page:** Open `index.html` to choose between the styled and unstyled versions.
-*   **Styled Version:** Open `styledCV.html` for a visually appealing, modern resume.
-*   **Unstyled Version:** Open `unstyledCV.html` for a clean, ATS-friendly resume with semantic HTML.
-*   **EuroPass Inspired Version:** Open `euroPassCV.html` for a resume formatted in the EuroPass style.
+*   **Styled Version:** Open `src/styledCV.html` for a visually appealing, modern resume.
+*   **Unstyled Version:** Open `src/unstyledCV.html` for a clean, ATS-friendly resume with semantic HTML.
+*   **EuroPass Inspired Version:** Open `src/euroPassCV.html` for a resume formatted in the EuroPass style.
+
 
 ## Features
 
